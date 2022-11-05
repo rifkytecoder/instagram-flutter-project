@@ -1,6 +1,6 @@
-// todo StoryItem Extract Widget
 import 'package:flutter/material.dart';
 
+// todo StoryItem Extract Widget
 class StoryItem extends StatelessWidget {
   final String title;
 

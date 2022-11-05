@@ -162,14 +162,31 @@ class ProfilePage extends StatelessWidget {
               TapItem(Icons.person_pin_outlined, false),
               // Expanded(child: Icon(Icons.person_pin_outlined)),
             ],
-          )
+          ),
+
+          // todo Grid View 3 x 3
+          GridView.builder(
+            shrinkWrap: true, // jika scroll di dalam scroll widget
+            physics:
+                const NeverScrollableScrollPhysics(), // jika scroll di dalam scroll widget
+            itemCount: 12, // pastikan ada itemCount saat buat GridView
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              mainAxisSpacing: 8,
+              crossAxisSpacing: 8,
+            ),
+            itemBuilder: (context, index) => Image.network(
+              "https://picsum.photos/id/${index + 10}/200/300?grayscale",
+              fit: BoxFit.cover,
+            ),
+          ),
         ],
       ),
     );
   }
 }
 
-// todo TapItem extract Widget
 
 // todo StoryItem Extract Widget
+// todo TapItem extract Widget
 

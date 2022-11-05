@@ -1,6 +1,6 @@
-// todo TapItem extract Widget
 import 'package:flutter/material.dart';
 
+// todo TapItem extract Widget
 class TapItem extends StatelessWidget {
   final IconData icon;
   final bool active;
