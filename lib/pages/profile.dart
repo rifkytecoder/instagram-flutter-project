@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../widgets/info_item.dart';
 import '../widgets/profile_picture.dart';
+import '../widgets/story_item.dart';
+import '../widgets/tap_item.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -148,67 +150,26 @@ class ProfilePage extends StatelessWidget {
               ),
             ),
           ),
+
+          const SizedBox(
+            height: 15,
+          ),
+
+          Row(
+            children: const [
+              // todo TapItem extract widget
+              TapItem(Icons.grid_on_outlined, true),
+              TapItem(Icons.person_pin_outlined, false),
+              // Expanded(child: Icon(Icons.person_pin_outlined)),
+            ],
+          )
         ],
       ),
     );
   }
 }
+
+// todo TapItem extract Widget
 
 // todo StoryItem Extract Widget
-class StoryItem extends StatelessWidget {
-  final String title;
 
-  // todo constructor (name: argument)
-  // const StoryItem({
-  //   Key? key,
-  //   required this.title
-  // }) : super(key: key);
-  const StoryItem(this.title);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 8),
-      child: Column(
-        children: [
-          // todo Circle stack container story
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              Container(
-                width: 80,
-                height: 80,
-                decoration: BoxDecoration(
-                  color: Colors.grey[300],
-                  borderRadius: BorderRadius.circular(80 / 2),
-                ),
-              ),
-              Container(
-                width: 77,
-                height: 77,
-                decoration: BoxDecoration(
-                  color: Colors.grey[300],
-                  borderRadius: BorderRadius.circular(77 / 2),
-                  border: Border.all(
-                    color: Colors.white,
-                    width: 5,
-                  ),
-                  // photo NetworkImage
-                  image: const DecorationImage(
-                    image: NetworkImage("https://picsum.photos/200"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              )
-            ],
-          ),
-          const SizedBox(
-            height: 8,
-          ),
-          // const Text("Story 1"),
-          Text(title),
-        ],
-      ),
-    );
-  }
-}
