@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/info_item.dart';
 import '../widgets/profile_picture.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -43,11 +44,25 @@ class ProfilePage extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          Row(
-            children: const [
-              // extract ProfilePicture
-              ProfilePicture(),
-            ],
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: Row(
+              children: [
+                // todo extract widget ProfilePicture
+                const ProfilePicture(),
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: const [
+                      // todo extract widget Column InfoItem
+                      InfoItem("Posts", "999"),
+                      InfoItem("Follower", "999"),
+                      InfoItem("Following", "999"),
+                    ],
+                  ),
+                )
+              ],
+            ),
           )
         ],
       ),
