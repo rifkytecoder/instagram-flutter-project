@@ -18,7 +18,7 @@ class TapItem extends StatelessWidget {
           // border dibagian bawah dgn tebah 1
           border: Border(
             bottom: BorderSide(
-              width: 1,
+              width: 2,
               // jika aktif akan berwarna hitam
               color: active == true ? Colors.black : Colors.white,
             ),

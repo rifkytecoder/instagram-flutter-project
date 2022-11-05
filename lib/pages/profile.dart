@@ -169,7 +169,7 @@ class ProfilePage extends StatelessWidget {
             shrinkWrap: true, // jika scroll di dalam scroll widget
             physics:
                 const NeverScrollableScrollPhysics(), // jika scroll di dalam scroll widget
-            itemCount: 12, // pastikan ada itemCount saat buat GridView
+            itemCount: 15, // pastikan ada itemCount saat buat GridView
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
               mainAxisSpacing: 8,
@@ -179,6 +179,30 @@ class ProfilePage extends StatelessWidget {
               "https://picsum.photos/id/${index + 10}/200/300?grayscale",
               fit: BoxFit.cover,
             ),
+          ),
+
+          // todo Bottom Navigation Bar
+          BottomNavigationBar(
+            selectedItemColor: Colors.black, // icon aktif
+            unselectedItemColor: Colors.grey, // icon non-aktif
+            currentIndex: 4, // index aktif
+            showSelectedLabels: false, // gak pake label
+            showUnselectedLabels: false, // gak pake label
+
+            items: const [
+              BottomNavigationBarItem(
+                  // tooltip: "tools tip",
+                  icon: Icon(Icons.home_filled),
+                  label: "Home"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.search_rounded), label: "Search"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.movie_filter_rounded), label: "Reels"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.shopping_bag), label: "Cart"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person), label: "Profile"),
+            ],
           ),
         ],
       ),
