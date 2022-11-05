@@ -45,7 +45,7 @@ class ProfilePage extends StatelessWidget {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(15),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               children: [
                 // todo extract widget ProfilePicture
@@ -63,7 +63,53 @@ class ProfilePage extends StatelessWidget {
                 )
               ],
             ),
-          )
+          ),
+          // box space
+          const SizedBox(
+            height: 15,
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15),
+            // todo text username
+            child: Text(
+              "rifkyte",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          // box space
+          const SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            // todo RichText 'jdi gak perlu buat Row untuk sebuah text
+            child: RichText(
+              text: const TextSpan(
+                  text:
+                      "Mobile Developer Flutter, Design Illustrator 2D and Modelling 3D \n",
+                  children: [
+                    TextSpan(
+                        text: "#hastag ", style: TextStyle(color: Colors.blue)),
+                    TextSpan(
+                        text: "#flutter ",
+                        style: TextStyle(color: Colors.blue)),
+                    TextSpan(
+                        text: "#illustration ",
+                        style: TextStyle(color: Colors.blue)),
+                  ]),
+            ),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15),
+            // todo text link
+            child: Text(
+              "Link goes here",
+              style: TextStyle(color: Colors.blue),
+            ),
+          ),
         ],
       ),
     );
