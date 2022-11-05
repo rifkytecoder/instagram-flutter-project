@@ -110,6 +110,22 @@ class ProfilePage extends StatelessWidget {
               style: TextStyle(color: Colors.blue),
             ),
           ),
+          const SizedBox(
+            height: 8,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            // todo Bottom Edit Profile
+            child: OutlinedButton(
+              onPressed: () {},
+              // style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
+              child: const Text(
+                "Edit Profile",
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
+              ),
+            ),
+          ),
         ],
       ),
     );
